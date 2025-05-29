@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WW Ravenstein - 🚧 Under construction 🚧</title>
+  <style>
+    body {
+      background-color: #fcfcfc;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      padding-top: 50px;
+      background-image: url('bg-tile.gif');
+      background-repeat: repeat;
+    }
+
+    .container {
+      border: 5px double black;
+      width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      animation: border-blink 1s step-end infinite;
+    }
+
+    .blink {
+      animation: blink-animation 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    @keyframes border-blink {
+      50% {
+        border-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>WW Ravenstein</h1>
+    <h2 class="blink">🚧 Under construction 🚧</h2>
+    <img src="under_construction.png" width="300" height="300" alt="Under Construction">
+    <marquee scrollamount="5">👷‍♀️ Website under construction – check back soon 👷‍♂️</marquee>
+  </div>
+</body>
+</html>
