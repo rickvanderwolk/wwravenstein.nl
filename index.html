@@ -13,6 +13,27 @@
       background-repeat: repeat;
     }
 
+    #screensaver {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: none;
+        z-index: 100;
+        background-color: black;
+    }
+
+    #screensaver-text {
+        position: absolute;
+        text-shadow: 0 0 10px;
+    }
+
+    #screensaver-text {
+        font-size: 48px;
+    }
+
     .container {
       border: 5px double black;
       width: 500px;
@@ -45,5 +66,10 @@
     <img src="under_construction.png" width="300" height="300" alt="Under Construction">
     <marquee scrollamount="5">👷‍♀️ Website under construction – check back soon 👷‍♂️</marquee>
   </div>
+
+  <div id="screensaver">
+      <div id="screensaver-text">WW Ravenstein</div>
+  </div>
+  <script type="text/javascript" src="/assets/js/screensaver.js" defer></script>
 </body>
 </html>
