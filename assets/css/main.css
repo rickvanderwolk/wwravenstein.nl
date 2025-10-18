@@ -68,8 +68,14 @@ body {
 
 #screensaver-text {
     position: absolute;
-    font-size: 48px;
+    font-size: 24px;
     text-shadow: 0 0 10px;
+}
+
+@media (min-width: 768px) {
+    #screensaver-text {
+        font-size: 48px;
+    }
 }
 
 /* Respect user's motion preferences */
