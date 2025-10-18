@@ -34,7 +34,7 @@ body {
     margin: 10px 0;
 }
 
-* .terminal-window h1::before {
+.terminal-window h1::before {
     content: '# ';
 }
 
