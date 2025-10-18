@@ -5,13 +5,17 @@ function getRandomishColor() {
 }
 
 function resetTimer() {
-    document.getElementById('screensaver').style.display = 'none';
+    const screensaver = document.getElementById('screensaver');
+    screensaver.style.display = 'none';
+    screensaver.setAttribute('aria-hidden', 'true');
     clearTimeout(screensaverTimeout);
     screensaverTimeout = setTimeout(showScreensaver, 25 * 1000);
 }
 
 function showScreensaver() {
-    document.getElementById('screensaver').style.display = 'block';
+    const screensaver = document.getElementById('screensaver');
+    screensaver.style.display = 'block';
+    screensaver.setAttribute('aria-hidden', 'false');
     animate();
     if (typeof changeLinkColors === 'function') {
         changeLinkColors();
@@ -58,6 +62,13 @@ function animate() {
 
 ['mousemove', 'keydown', 'click', 'scroll'].forEach(event => {
     document.addEventListener(event, resetTimer);
+});
+
+// Add keyboard support to close screensaver with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('screensaver').style.display === 'block') {
+        resetTimer();
+    }
 });
 
 resetTimer();

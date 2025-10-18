@@ -47,9 +47,11 @@ body {
     border-bottom: 1px dotted #0f0;
 }
 
-.terminal-window a:hover {
+.terminal-window a:hover,
+.terminal-window a:focus {
     background: #0f0;
     color: #000;
+    outline: none;
 }
 
 #screensaver {
@@ -68,4 +70,16 @@ body {
     position: absolute;
     font-size: 48px;
     text-shadow: 0 0 10px;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    #screensaver-text {
+        animation: none;
+    }
+
+    /* Disable screensaver animation for users who prefer reduced motion */
+    #screensaver {
+        display: none !important;
+    }
 }
